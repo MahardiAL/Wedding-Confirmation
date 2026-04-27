@@ -1150,11 +1150,6 @@ audio {
     transition: transform 1s ease-in-out;
 }
 
-/* Dorong regards-wrapper ke titik terbawah */
-.regards-wrapper {
-    margin-top: auto; /* Trik sakti untuk mendorong elemen ke bawah dalam flexbox */
-    text-align: center;
-}
 .slide {
     min-width: 100%;
     height: 100%;
