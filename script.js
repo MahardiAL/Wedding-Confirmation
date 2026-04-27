@@ -10,13 +10,19 @@ const musicDataUrl = "background_song.mp3";
 const audio = new Audio(musicDataUrl);
 let isPlaying = false;
 
-openBtn.addEventListener('click', () => {
-    coverPage.classList.add('open');
-    setTimeout(() => {
-        mainContent.classList.add('visible');
-        playMusic()
-    }, 600);
+// 1. Langsung tampilkan mainContent saat halaman dimuat
+document.addEventListener('DOMContentLoaded', () => {
+    // Sembunyikan cover page (opsional, tergantung keinginan desain)
+    if (coverPage) coverPage.classList.add('open'); 
+    
+    // Tampilkan konten utama langsung
+    if (mainContent) mainContent.classList.add('visible');
+    
+    // Scroll ke atas untuk memastikan mulai dari awal
     window.scrollTo({ top: 0 });
+
+    // Catatan: Musik tidak bisa otomatis "Play" di banyak browser modern 
+    // tanpa interaksi user. Jadi playMusic() mungkin tetap butuh satu klik di layar.
 });
 
 // Fungsi kontrol musik
@@ -146,6 +152,7 @@ const weddingDinnerSection = document.getElementById('weddingDinnerSection');
 const rsvpGroup = document.getElementById('rsvpGroup');
 const eventGroup = document.getElementById('eventGroup');
 const rsvpButton = document.getElementById('rsvpButton');
+const thankyouGroup = document.getElementById('thankyouGroup');
 
 // Show event choice dropdown only if the invitation type is 'Closed'
 if (invitationType === 'Closed') {
@@ -167,9 +174,7 @@ iframe.addEventListener('load', function() {
         alert(`Thank you ${rsvpNameInput.value}! Your confirmation has been received.`);
         rsvpGroup.style.display = 'none';
         eventGroup.style.display = 'none';
-        eventChoiceGroup.style.display = 'none';
-        rsvpAttendanceGroup.style.display = 'none';
-        rsvpButton.style.display = 'none';
+        thankyouGroup.style.display = 'flex';
         rsvpText.textContent = `Thank you ${rsvpNameInput.value}! Your confirmation has been received.`;
         submittedRsvp = false;
     }

@@ -9,10 +9,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Bible Verse Section -->
+        <div class="section bible-verse-section" style="display: none;">
+            <div class="slideshow" id="slideshowBible">
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background_verse_1.jpg');"></div>
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background_verse_2.jpg');"></div>
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background_verse_3.jpg');"></div>
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background_verse_4.jpg');"></div>
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background_verse_1.jpg');"></div>
+            </div>
+            <h1 class="section-head anim-item">Wedding Ceremony</h2>
+            <div class="names anim-item delay-1">Mahardi & Ceren</div>
+            <blockquote class="bible-verse anim-item">
+                <p>"Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It does not dishonor others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs. Love does not delight in evil but rejoices with the truth. It always protects, always trusts, always hopes, always perseveres."</p>
+                <footer class="delay-1">— 1 Corinthians 13:4-7 —</footer>
+            </blockquote>
+        </div>
         <!-- RSVP Section -->
-        <div class="section" id = "rsvpGroup">
-            <h1 class="section-head anim-item">Mahardi & Ceren Wedding Ceremony</h1>
-            <h2 class="section-head anim-item">RSVP</h2>
+        <div class="section" id="rsvpGroup">
+            <h1 class="section-head anim-item">Mahardi & Ceren Wedding Event</h1>
+            <h2 class="section-head subsection-title anim-item">RSVP</h2>
             <p class="gift-text anim-item delay-1" id="rsvpText">Please confirm your attendance to help us prepare for the event better.</p>
             <form class="wishes-form anim-item delay-2" id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfI3iPAJ6_skGBrC3gPa8S94YgnhOjgpuH4wNF_bfEKGI9HEg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
                 <div class="form-group" id="rsvpAttendanceGroup">
@@ -24,7 +43,7 @@
                 </div>
                 <div class="form-group" id="rsvpNameGroup" style="display: none;">
                     <label for="rsvpName">Your Name</label>
-                    <input type="text" id="rsvpName" name="entry.679294176" placeholder="Enter your name">
+                    <input type="text" id="rsvpName" name="entry.679294176" placeholder="Enter your name" required>
                 </div>
                 <div class="form-group" id="eventChoiceGroup" style="display: none;">
                     <label for="eventChoice">Which event will you attend?</label>
@@ -48,7 +67,7 @@
         </div>
         <!-- Welcome Section -->
         <div class="section" id="eventGroup">
-            <h1 class="section-head anim-item">Wedding Event</h1>
+            <h1 class="section-head anim-item">Wedding Event</h2>
             <h2 class="section-head subsection-title anim-item">Holy Matrimony</h2>
             <div class="date-venue anim-item delay-2">
                 <p><i class="fas fa-calendar"></i> Saturday, September 12, 2026</p>
@@ -74,9 +93,92 @@
                 </div>
             </div>
         </div>
+        
 
+        <!-- Wedding Gift Section -->
+        <div class="section" style="display: none;">
+            <h2 class="section-head anim-item">Wedding Gift</h2>
+            <p class="gift-text anim-item delay-1">Your presence at our wedding is the greatest gift of all. However, should you wish to honor us with a gift, you may do so by sending an e-angpao to the following account:</p>
+            <div class="gift-card anim-item delay-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA Logo" class="bank-logo">
+                <p class="account-number" id="accountNumber">7350022389</p>
+                <p class="account-name">a.n Ceren Evan Elyada</p>
+                <button class="copy-btn" id="copyButton">
+                    <i class="fas fa-copy"></i> Copy Number
+                </button>
+            </div>
+        </div>
+        <!-- Livestream Section -->
+        <div class="section" id="livestreamSection" style="display: none;">
+            <h2 class="section-head anim-item">Wedding Livestream</h2>
+            <p class="livestream-text anim-item delay-1">For our beloved family and friends who are unable to attend in person, we invite you to join us virtually as we say "I do".</p>
+            <a href="https://www.youtube.com/live/OmU_AB34DA0?si=Os93JTc9yKr-f5up" class="livestream-btn anim-item delay-2" target="_blank">
+                <i class="fas fa-video"></i> Watch on Youtube
+            </a>
+            <a href="https://www.youtube.com/live/OmU_AB34DA0?si=Os93JTc9yKr-f5up" target="_blank" class="livestream-image-link anim-item delay-3">
+                <img src="livestream.png" alt="Watch Livestream">
+            </a>
+        </div>
+
+        <!-- Wishes Form -->
+        <div class="section" style="display: none;">
+            <h2 class="section-head anim-item">Your Wishes</h2>
+            <form class="wishes-form anim-item delay-1" id="wishesForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdBEqHF5hp-nLX_Ml3dQx3G2W-ndqCA1lm0LPCQC5XyCp-dzw/formResponse" method="POST" target="hidden_iframe">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="entry.379374083" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="entry.922310194" placeholder="Share your wishes for us..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Wishes</button>
+            </form>
+            <p class="wishes-notice anim-item delay-2">
+                <i class="fas fa-info-circle"></i> Please note: Wishes may take some time to appear after submission.
+            </p>
+            <div class="wishes-gallery anim-item delay-3" id="wishesGallery">
+                <!-- Wishes will be loaded here by JavaScript -->
+            </div>
+        </div>
+        <!-- Prewedding Photos -->
+        <div class="section" style="display: none;">
+            <h2 class="section-head anim-item">Our Moments</h2>
+            <div class="photo-album">
+                <div class="photo-item">
+                    <img src="photo_item_1.jpg" alt="Prewedding Photo 1">
+                </div>
+                <div class="photo-item">
+                    <img src="photo_item_11.jpg" alt="Prewedding Photo 2">
+                </div>
+                <div class="photo-item">
+                    <img src="photo_item_3.jpg" alt="Prewedding Photo 3">
+                </div>
+                <div class="photo-item">
+                    <img src="photo_item_4.jpg" alt="Prewedding Photo 4">
+                </div>
+                <div class="photo-item">
+                    <img src="photo_item_5.jpg" alt="Prewedding Photo 5">
+                </div>
+                <div class="photo-item">
+                    <img src="photo_item_6.jpg" alt="Prewedding Photo 6">
+                </div>
+                <div class="photo-item">
+                    <img src="photo_item_7.jpg" alt="Prewedding Photo 7">
+                </div>
+                <div class="photo-item">
+                    <img src="photo_item_8.jpg" alt="Prewedding Photo 8">
+                </div>
+                <div class="photo-item">
+                    <img src="photo_item_9.jpg" alt="Prewedding Photo 9">
+                </div>
+                <div class="photo-item">
+                    <img src="photo_item_10.jpg" alt="Prewedding Photo 10">
+                </div>
+            </div>
+        </div>
         <!-- Thank You Section -->
-        <div class="section thank-you-section" style="display: none;">
+        <div class="section thank-you-section" id="thankyouGroup" style="display: none;">
             <div class="slideshow" id="slideshowThankyou">
                 <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background_thank_you_1.jpg');"></div>
                 <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background_thank_you_2.jpg');"></div>
@@ -97,6 +199,21 @@
             </div>
         </div>
     </div>
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+        <img src="music.jpg" alt="Play/Pause Music" id="playPauseBtn" class="music-icon">
+    </div>
+    
+    <!-- Photo Album Lightbox/Modal -->
+    <div id="photoLightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <a class="lightbox-prev">&#10094;</a>
+            <img id="lightboxImage" src="" alt="Enlarged Photo">
+            <a class="lightbox-next">&#10095;</a>
+        </div>
+    </div>
+
     <script src="script.js"></script>
     
 </body>
