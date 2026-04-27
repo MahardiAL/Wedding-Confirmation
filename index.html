@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <!-- RSVP Section -->
+        <div class="section" id = "rsvpGroup">
+            <h1 class="section-head anim-item">Mahardi & Ceren Wedding Ceremony</h1>
+            <h2 class="section-head anim-item">RSVP</h2>
+            <p class="gift-text anim-item delay-1" id="rsvpText">Please confirm your attendance to help us prepare for the event better.</p>
+            <form class="wishes-form anim-item delay-2" id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfI3iPAJ6_skGBrC3gPa8S94YgnhOjgpuH4wNF_bfEKGI9HEg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+                <div class="form-group" id="rsvpAttendanceGroup">
+                    <label>Will you be attending?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="entry.1413813021" value="Yes, I will attend" required> Yes, I will attend</label>
+                        <label><input type="radio" name="entry.1413813021" value="Sorry, I can't make it" required> Sorry, I can't make it</label>
+                    </div>
+                </div>
+                <div class="form-group" id="rsvpNameGroup" style="display: none;">
+                    <label for="rsvpName">Your Name</label>
+                    <input type="text" id="rsvpName" name="entry.679294176" placeholder="Enter your name">
+                </div>
+                <div class="form-group" id="eventChoiceGroup" style="display: none;">
+                    <label for="eventChoice">Which event will you attend?</label>
+                    <select id="eventChoice" name="entry.1194885429" required> <!-- Ganti entry.123456789 dengan ID Entri Google Form Anda -->
+                        <option value="" disabled selected>Please select an option</option>
+                        <option value="Join Holy Matrimony">Join Holy Matrimony</option>
+                        <option value="Join Wedding Dinner">Join Wedding Dinner</option>
+                        <option value="Join Both Events">Join Both Events</option>
+                        <option hidden value="-">Join Both Events</option>
+                    </select>
+                </div>
+                <div class="form-group" id="guestCountGroup" style="display: none;">
+                    <label for="guestCount">Number of Guests (including yourself)</label>
+                    <input type="number" id="guestCount" name="entry.2012343541" value="1" min="0" max="5" style="width: 100px;">
+                </div>
+                <div class="form-group" id="guestIdGroup" style="display: none;">
+                    <input type="text" id="guestId" name="entry.1758410630" placeholder="Enter your Id">
+                </div>
+                <button type="submit" class="submit-btn" id="rsvpButton">Send Confirmation</button>
+            </form>
+        </div>
+        <!-- Welcome Section -->
+        <div class="section" id="eventGroup">
+            <h1 class="section-head anim-item">Wedding Event</h1>
+            <h2 class="section-head subsection-title anim-item">Holy Matrimony</h2>
+            <div class="date-venue anim-item delay-2">
+                <p><i class="fas fa-calendar"></i> Saturday, September 12, 2026</p>
+                <p><i class="fas fa-clock"></i> 10:00 AM</p>
+                <p><i class="fas fa-map-marker-alt"></i> GKI Gading Serpong, Tangerang</p>
+            </div>
+            <div style="text-align: center;" class="anim-item delay-3">
+                <a href="https://maps.app.goo.gl/Huy4MYgBFS1KNY437" class="map-btn" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> View Map
+                </a>
+            </div>
+            <div id="weddingDinnerSection" style="display: none;">
+                <h2 class="section-head subsection-title anim-item delay-4">Wedding Intimate Dinner</h2>
+                <div class="date-venue anim-item delay-5">
+                    <p><i class="fas fa-calendar"></i> Saturday, September 12, 2026</p>
+                    <p><i class="fas fa-clock"></i> 05:00 PM</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dove Function Room, Ruko Hampton Square B1, Tangerang</p>
+                </div>
+                <div style="text-align: center;" class="anim-item delay-6">
+                    <a href="https://maps.app.goo.gl/DsMQiTtY1qR228Qn6" class="map-btn" target="_blank">
+                        <i class="fas fa-map-marked-alt"></i> View Map
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thank You Section -->
+        <div class="section thank-you-section" style="display: none;">
+            <div class="slideshow" id="slideshowThankyou">
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background_thank_you_1.jpg');"></div>
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background_thank_you_2.jpg');"></div>
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background_thank_you_3.jpg');"></div>
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background_thank_you_4.jpg');"></div>
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background_thank_you_1.jpg');"></div>
+            </div>
+            <h2 class="section-head anim-item">Thank You</h2>
+            <div class="thank-you-bottom"> <!-- Wrapper for bottom content -->
+                <p class="thank-you-text anim-item">
+                    It is an honor and a great joy for us to have you present to share in our happiness and give us your blessings. We sincerely thank you for your presence and well wishes.
+                </p>
+                <p class="sincerely-text anim-item delay-1">Warmest regards,</p>
+                <div class="signature-names anim-item delay-2">
+                    Mahardi <span class="ampersand">&</span> Ceren
+                </div>
+                <p class="hashtag anim-item delay-3">#MAHARDIhatiCEREN</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>
