@@ -153,6 +153,8 @@ const rsvpGroup = document.getElementById('rsvpGroup');
 const eventGroup = document.getElementById('eventGroup');
 const rsvpButton = document.getElementById('rsvpButton');
 const thankyouGroup = document.getElementById('thankyouGroup');
+const giftSection = document.getElementById('giftSection');
+const livestreamSection = document.getElementById('livestreamSection');
 
 // Show event choice dropdown only if the invitation type is 'Closed'
 if (invitationType === 'Closed') {
@@ -174,6 +176,8 @@ iframe.addEventListener('load', function() {
         alert(`Thank you ${rsvpNameInput.value}! Your confirmation has been received.`);
         rsvpGroup.style.display = 'none';
         eventGroup.style.display = 'none';
+        giftSection.style.display = 'none';
+        livestreamSection.style.display = 'none';
         thankyouGroup.style.display = 'flex';
         rsvpText.textContent = `Thank you ${rsvpNameInput.value}! Your confirmation has been received.`;
         submittedRsvp = false;
