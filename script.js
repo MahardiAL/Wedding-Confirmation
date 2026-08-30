@@ -155,6 +155,9 @@ const rsvpButton = document.getElementById('rsvpButton');
 const thankyouGroup = document.getElementById('thankyouGroup');
 const giftSection = document.getElementById('giftSection');
 const livestreamSection = document.getElementById('livestreamSection');
+document.getElementById("rsvpTextOver").style.fontSize = "24px";
+document.getElementById("rsvpTextOver").style.fontFamily = "'Playfair Display', serif";
+document.getElementById("rsvpTextOver").style.color = "#d4af37";
 
 // Show event choice dropdown only if the invitation type is 'Closed'
 if (invitationType === 'Closed') {
@@ -202,7 +205,7 @@ copyButton.addEventListener('click', () => {
         .catch(err => console.error('Failed to copy: ', err));
 });
 // Countdown Timer
-const weddingDate = new Date("September 12, 2026 15:00:00").getTime();
+const weddingDate = new Date("September 12, 2026 09:00:00").getTime();
 
 const countdownFunction = setInterval(function() {
     const now = new Date().getTime();
